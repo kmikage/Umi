@@ -13,7 +13,7 @@
 "Umi"は"Honoka"に[Bootswatch Flatly](http://bootswatch.com/)の配色を適応したテーマです。
 ## Live Demo
 
- * [https://nkmr6194.github.io/Umi/bootstrap-jp.html](https://nkmr6194.github.io/Umi/bootstrap-jp.html) (日本語レイアウト)
+ * [https://nkmr6194.github.io/Umi/bootstrap-ja.html](https://nkmr6194.github.io/Umi/bootstrap-ja.html) (日本語レイアウト)
  * [https://nkmr6194.github.io/Umi/bootstrap.html](https://nkmr6194.github.io/Umi/bootstrap.html) (英語レイアウト)
 
 ## Usage
