@@ -4,7 +4,7 @@
   "description": "Umi is a fork of Honoka which is a Bootstrap theme.",
   "author": "SAKATA Sinji",
   "website": "https://nkmr6194.github.io/Umi/",
-  "license": "MIT License",
+  "license": "MIT",
   "main": "Gruntfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
