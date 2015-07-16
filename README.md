@@ -1,5 +1,7 @@
 # Umi
 
+[![Build Status](https://travis-ci.org/NKMR6194/Umi.svg?branch=master)](https://travis-ci.org/NKMR6194/Umi)
+
 [https://nkmr6194.github.io/Umi/](https://nkmr6194.github.io/Umi/)
 
 ![umi](dist/assets/img/sample.png)

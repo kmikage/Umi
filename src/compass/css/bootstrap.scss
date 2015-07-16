@@ -2,11 +2,11 @@
 
 @import "umi/variables";
 /*!
- * Umi v#{$bootstrap-version}
- * Website: https://nkmr6194.github.io/Umi/
- * Copyright 2015 SAKATA Sinji
+ * Umi v{%version%}
+ * Website: {%website%}
+ * Copyright {%year%} {%author%}
  * The MIT License
- * Based on Honoka which is a Bootstrap theme
+ * Based on Bootstrap v#{$bootstrap-version}
  */
 // Core variables and mixins
 @import "bootstrap/mixins";
