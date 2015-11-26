@@ -1,6 +1,6 @@
 {
-  "name": "Honoka",
-  "description": "Honoka is one of the Bootstrap original theme.",
+  "name": "Umi",
+  "description": "Umi is a fork of Honoka which is a Bootstrap theme.",
   "keywords": [
     "css",
     "sass",
@@ -13,11 +13,11 @@
     "web",
     "lovelive"
   ],
-  "author": "windyakin",
-  "homepage": "http://honokak.osaka/",
+  "author": "SAKATA Sinji",
+  "homepage": "https://nkmr6194.github.io/Umi/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/windyakin/Honoka.git"
+    "url": "git://github.com/NKMR6194/Umi.git"
   },
   "license": "MIT",
   "moduleType": "globals",
