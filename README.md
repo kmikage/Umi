@@ -31,10 +31,10 @@
 [Bower](http://bower.io/)からインストールすることができます。
 
 ```
-bower install --save-dev Honoka#(version)
+bower install --save-dev Umi#(version)
 ```
 
-``(version)``にはバージョン番号を指定します(ex. ``Honoka#3.3.5-c``)。Honokaの最新バージョン番号は[Relases](https://github.com/windyakin/Honoka/releases)から確認してください。
+``(version)``にはバージョン番号を指定します(ex. ``Honoka#3.3.6-1``)。Umiの最新バージョン番号は[Relases](https://github.com/NKMR6194/Umi/releases)から確認してください。
 
 ## Usage
 
