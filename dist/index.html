@@ -85,7 +85,7 @@
           <a href="http://honokak.osaka/" class="btn btn-warning btn-lg"><i class="fa fa-rocket"></i> Visit "Honoka"</a>
         </div>
         <div class="basedon small">
-          Last version v<span class="last-version"></span> ・ Based on <a href="http://getbootstrap.com/">Bootstrap</a> v3.3.6 and <a href="http://honokak.osaka">Honoka</a>
+          Last version v<span class="last-version"></span> ・ Based on <a href="http://getbootstrap.com/">Bootstrap</a> v<span class="base-version"></span> and <a href="http://honokak.osaka">Honoka</a>
         </div>
       </div>
     </div>
@@ -218,8 +218,13 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-xs-12 text-center">
-        <pre>bower install --save-dev Umi#<span class="last-version"></span></pre>
+      <div class="col-md-8 col-md-offset-2 col-xs-12 text-center">
+        <div class="input-group">
+          <input type="text" class="form-control input-lg" id="command" value="bower install --save-dev $(node -e &#34;$(curl -fsSL https://cdn.honokak.osaka/last.js)&#34; NKMR6194 Umi)" onclick="this.select();" readonly="readonly">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default btn-lg" data-clipboard-target="#command"><i class="fa fa-clipboard"></i></button>
+          </span>
+        </div>
         <p class="help-block">v3.3.6-1 以降から対応</p>
       </div>
     </div>
@@ -245,9 +250,9 @@
       </div>
       <div class="col-md-4">
         <div class="thumbnail">
-          <a href="http://turnkillquest.x0.com/tkq/"><img src="//cdn.honokak.osaka/assets/img/turnkill.png"></a>
+          <a href="http://sugoi.windyakin.net/"><img src="//cdn.honokak.osaka/assets/img/sugoi.png"></a>
           <div class="caption text-center">
-            <h4>TurnKillQuest</h4>
+            <h4>この高専がすごい！</h4>
           </div>
         </div>
       </div>
@@ -256,6 +261,32 @@
           <a href="http://yashihei.net/"><img src="//cdn.honokak.osaka/assets/img/yashihei.png"></a>
           <div class="caption text-center">
             <h4>yashihei.net</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="http://sysken.org/advent2015/"><img src="//cdn.honokak.osaka/assets/img/sysken.png"></a>
+          <div class="caption text-center">
+            <h4>SYSKEN Advent Calendar</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="http://timers-inc.com/"><img src="//cdn.honokak.osaka/assets/img/timers-inc.png"></a>
+          <div class="caption text-center">
+            <h4>TIMERS Inc</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="http://ost.procon-online.net/"><img src="//cdn.honokak.osaka/assets/img/ost.png"></a>
+          <div class="caption text-center">
+            <h4>PROCON O.S.T. Project</h4>
           </div>
         </div>
       </div>
@@ -310,18 +341,28 @@
   ga('send', 'pageview');
 </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.5/clipboard.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script>
+new Clipboard('.btn');
 $(document).ready(function(e) {
-  $.ajax({
-    url: 'https://api.github.com/repos/NKMR6194/Umi/releases/latest',
-    type: 'get',
-    dataType: 'json'
-  })
-  .done(function(data) {
-    $('.last-version').text(data.tag_name.split('v')[1]);
-  });
+	$.when(
+		$.ajax({
+			url: 'https://api.github.com/repos/NKMR6194/Umi/releases/latest',
+			type: 'get',
+			dataType: 'json'
+		}),
+		$.ajax({
+			url: 'https://cdn.rawgit.com/windyakin/Honoka/master/bower.json',
+			type: 'get',
+			dataType: 'json'
+		})
+	)
+	.done(function(last, base) {
+		$('.last-version').text(last[0].tag_name.split('v')[1]);
+		$('.base-version').text(base[0].devDependencies.bootstrap);
+	});
 });
 </script>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>

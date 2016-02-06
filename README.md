@@ -24,17 +24,25 @@
 
 ### Download
 
-[Relases](https://github.com/NKMR6194/Umi/releases)から最新版をダウンロードしてください。
+[Releases](https://github.com/NKMR6194/Umi/releases)から最新版をダウンロードしてください。
 
 ### Bower
 
 [Bower](http://bower.io/)からインストールすることができます。
 
+最新版をインストールするには以下のコマンドを実行してください。
+
+```
+bower install --save-dev $(node -e "$(curl -fsSL https://cdn.honokak.osaka/last.js)" NKMR6194 Umi)
+```
+
+もしcURLが入っていない環境の場合には、
+
 ```
 bower install --save-dev Umi#(version)
 ```
 
-``(version)``にはバージョン番号を指定します(ex. ``Honoka#3.3.6-1``)。Umiの最新バージョン番号は[Relases](https://github.com/NKMR6194/Umi/releases)から確認してください。
+``(version)``にはバージョン番号を指定します(ex. ``Honoka#3.3.6-1``)。Umiの最新バージョン番号は[Releases](https://github.com/NKMR6194/Umi/releases)から確認してください。
 
 ## Usage
 
