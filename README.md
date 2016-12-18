@@ -6,7 +6,7 @@
 
 [https://nkmr6194.github.io/Umi/](https://nkmr6194.github.io/Umi/)
 
-[![umi](dist/assets/img/sample.png)](https://nkmr6194.github.io/Umi/)
+[![umi](docs/assets/img/sample.png)](https://nkmr6194.github.io/Umi/)
 
 "Umi" は "Honoka"を元にした日本語も美しく表示できるBootstrapテーマです。
 
