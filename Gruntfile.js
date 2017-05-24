@@ -26,7 +26,7 @@ module.exports = function(grunt) {
 						'/*!\n' +
 						' * Bootstrap v<%= twbs.version %> (<%= twbs.homepage %>)\n' +
 						' * Copyright 2011-<%= grunt.template.today("yyyy") %> <%= twbs.author %>\n' +
-						' * Licensed under the <%= twbs.license %> license\n' +
+						' * Licensed under the <%= twbs.license %> (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n' +
 						' */\n',
 		// bannerの調整
 		replace: {
@@ -36,8 +36,8 @@ module.exports = function(grunt) {
 				dest: 'dist/css/',
 				replacements: [
 					{
-						from: '@charset "UTF-8";',
-						to: '@charset "UTF-8";\n<%= banner %>'
+						from: '@charset \'UTF-8\';',
+						to: '@charset \'UTF-8\';\n<%= banner %>'
 					}
 				]
 			}
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
 				unixNewlines: true,
 				style: 'expanded',
 				bundleExec: true,
-				loadPath: ['bower_components/bootstrap-sass/assets/stylesheets/']
+				loadPath: ['bower_components/']
 			},
 			bootstrap: {
 				files: [{
@@ -77,7 +77,7 @@ module.exports = function(grunt) {
 			},
 			assets: {
 				options: {
-					loadPath: ['scss/']
+					loadPath: ['scss/', 'bower_components/']
 				},
 				files: [{
 					expand: true,
@@ -92,20 +92,6 @@ module.exports = function(grunt) {
 			options: {
 				config: 'bower_components/bootstrap/less/.csscomb.json'
 			},
-			bootstrap: {
-				files: {
-					'dist/css/bootstrap.css': ['dist/css/bootstrap.css']
-				}
-			},
-			assets: {
-				expand: true,
-				cwd: 'docs/assets/css/',
-				src: ['**/*.css'],
-				dest: 'docs/assets/css',
-				ext: '.css'
-			}
-		},
-		autoprefixer: {
 			bootstrap: {
 				files: {
 					'dist/css/bootstrap.css': ['dist/css/bootstrap.css']
@@ -138,14 +124,7 @@ module.exports = function(grunt) {
 		},
 		// bowerのインストール
 		bower: {
-			install: {
-				options: {
-					targetDir: 'dist/',
-					layout: function(type, component, source) {
-						return type;
-					}
-				}
-			}
+			install: {}
 		},
 		// ファイル更新監視
 		watch: {
@@ -156,6 +135,12 @@ module.exports = function(grunt) {
 			}
 		},
 		copy: {
+			bower: {
+				expand: true,
+				cwd: 'bower_components/bootstrap/dist/',
+				src: ['js/bootstrap**.js'],
+				dest: 'dist/'
+			},
 			docs: {
 				expand: true,
 				cwd: 'dist/',
@@ -173,6 +158,12 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		// exec
+		exec: {
+			postcss: {
+				command: 'npm run postcss'
+			}
+		},
 		compress: {
 			main: {
 				options: {
@@ -187,13 +178,6 @@ module.exports = function(grunt) {
 						dest: name +"/css"
 					},
 					{
-						// Font
-						expand: true,
-						cwd: "dist/fonts/",
-						src: ["**/*"],
-						dest: name +"/fonts"
-					},
-					{
 						// JavaScript
 						expand: true,
 						cwd: "dist/js/",
@@ -201,7 +185,7 @@ module.exports = function(grunt) {
 						dest: name +"/js"
 					},
 					{
-						// Sample html
+						// Sample
 						expand: true,
 						cwd: "docs/",
 						src: ["bootstrap.html"],
@@ -209,7 +193,7 @@ module.exports = function(grunt) {
 					},
 					{
 						// README
-						src: ["README.md"],
+						src: ["README.md", "LICENSE"],
 						dest: name
 					}
 				]
@@ -227,7 +211,6 @@ module.exports = function(grunt) {
 	// 本家Bootstrapのautoprefixerの設定を読み込む
 	grunt.task.registerTask('getTwbsConfig', 'Get config from bootstrap', function() {
 		try {
-			var configBridge = grunt.file.readJSON('bower_components/bootstrap/grunt/configBridge.json');
 			var twbsPkg = grunt.file.readJSON('bower_components/bootstrap/package.json');
 			grunt.verbose.ok();
 		} catch (e) {
@@ -236,11 +219,6 @@ module.exports = function(grunt) {
 		}
 		grunt.config.merge({
 			twbs: twbsPkg,
-			autoprefixer: {
-				options: {
-					browsers: configBridge.config.autoprefixerBrowsers
-				}
-			}
 		});
 	});
 
@@ -248,16 +226,16 @@ module.exports = function(grunt) {
 	grunt.registerTask('test', ['scsslint']);
 
 	// CSSビルド
-	grunt.registerTask('css', ['sass', 'autoprefixer', 'csscomb']);
+	grunt.registerTask('css', ['sass', 'exec:postcss', 'csscomb']);
 
 	// 最適化
 	grunt.registerTask('optimize', ['cssmin:minify']);
 
 	// 開発用
-	grunt.registerTask('server', ['bower:install', 'getTwbsConfig', 'test', 'css', 'copy:docs', 'connect', 'watch']);
+	grunt.registerTask('server', ['bower:install', 'test', 'css', 'copy:docs', 'connect', 'watch']);
 
 	// ビルドタスク
-	grunt.registerTask('build', ['clean:build', 'bower:install', 'getTwbsConfig', 'test', 'css', 'optimize', 'replace:banner', 'copy:docs']);
+	grunt.registerTask('build', ['clean:build', 'bower:install', 'copy:bower', 'getTwbsConfig', 'test', 'css', 'optimize', 'replace:banner', 'copy:docs']);
 
 	// 配布用パッケージ作成
 	grunt.registerTask('package', ['build', 'compress:main']);
