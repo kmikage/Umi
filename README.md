@@ -1,12 +1,12 @@
 # Umi
 
-[![Build Status by Travis CI](https://travis-ci.org/NKMR6194/Umi.svg?branch=master)](https://travis-ci.org/NKMR6194/Umi)
-[![devDependency Status](https://david-dm.org/NKMR6194/Umi/dev-status.svg)](https://david-dm.org/NKMR6194/Umi#info=devDependencies)
+[![Build Status by Travis CI](https://travis-ci.org/ysakasin/Umi.svg?branch=master)](https://travis-ci.org/ysakasin/Umi)
+[![devDependency Status](https://david-dm.org/ysakasin/Umi/dev-status.svg)](https://david-dm.org/ysakasin/Umi#info=devDependencies)
 [![The MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-[https://nkmr6194.github.io/Umi/](https://nkmr6194.github.io/Umi/)
+[https://ysakasin.github.io/Umi/](https://ysakasin.github.io/Umi/)
 
-[![umi](docs/assets/img/sample.png)](https://nkmr6194.github.io/Umi/)
+[![umi](docs/assets/img/sample.png)](https://ysakasin.github.io/Umi/)
 
 "Umi" は "Honoka"を元にした日本語も美しく表示できるBootstrapテーマです。
 
@@ -17,14 +17,14 @@
 "Umi"は"Honoka"に[Bootswatch Flatly](http://bootswatch.com/)の配色を適応したテーマです。
 ## Live Demo
 
- * [https://nkmr6194.github.io/Umi/bootstrap-ja.html](https://nkmr6194.github.io/Umi/bootstrap-ja.html) (日本語レイアウト)
- * [https://nkmr6194.github.io/Umi/bootstrap.html](https://nkmr6194.github.io/Umi/bootstrap.html) (英語レイアウト)
+ * [https://ysakasin.github.io/Umi/bootstrap-ja.html](https://ysakasin.github.io/Umi/bootstrap-ja.html) (日本語レイアウト)
+ * [https://ysakasin.github.io/Umi/bootstrap.html](https://ysakasin.github.io/Umi/bootstrap.html) (英語レイアウト)
 
 ## Getting Started
 
 ### Download
 
-[Releases](https://github.com/NKMR6194/Umi/releases)から最新版をダウンロードしてください。
+[Releases](https://github.com/ysakasin/Umi/releases)から最新版をダウンロードしてください。
 
 ### Bower
 
@@ -33,7 +33,7 @@
 最新版をインストールするには以下のコマンドを実行してください。
 
 ```
-bower install --save-dev $(node -e "$(curl -fsSL https://cdn.honokak.osaka/last.js)" NKMR6194 Umi)
+bower install --save-dev $(node -e "$(curl -fsSL https://cdn.honokak.osaka/last.js)" ysakasin Umi)
 ```
 
 もしcURLが入っていない環境の場合には、
@@ -42,7 +42,7 @@ bower install --save-dev $(node -e "$(curl -fsSL https://cdn.honokak.osaka/last.
 bower install --save-dev Umi#(version)
 ```
 
-``(version)``にはバージョン番号を指定します(ex. ``Honoka#3.3.6-1``)。Umiの最新バージョン番号は[Releases](https://github.com/NKMR6194/Umi/releases)から確認してください。
+``(version)``にはバージョン番号を指定します(ex. ``Honoka#3.3.6-1``)。Umiの最新バージョン番号は[Releases](https://github.com/ysakasin/Umi/releases)から確認してください。
 
 ## Usage
 
