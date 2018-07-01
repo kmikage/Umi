@@ -1,6 +1,6 @@
 {
-  "name": "Honoka",
-  "description": "Honoka is one of the Bootstrap original theme.",
+  "name": "Umi",
+  "description": "Umi is one of the Bootstrap original theme.",
   "keywords": [
     "css",
     "sass",
@@ -13,11 +13,11 @@
     "web",
     "lovelive"
   ],
-  "author": "windyakin",
-  "homepage": "http://honokak.osaka/",
+  "author": "ysakasin",
+  "homepage": "https://ysakasin.github.io/Umi/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/windyakin/Honoka.git"
+    "url": "git://github.com/ysakasin/Umi.git"
   },
   "license": "MIT",
   "moduleType": "globals",
