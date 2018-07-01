@@ -5,13 +5,14 @@
 @import "honoka/variables";
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/buttons";
+@import "honoka/bootswatch";
 // @import "bootstrap/scss/variables";
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 // @import "honoka/mixins";
 
 // stylelint-disable
-$brand-honoka:   #ff9800;
+$brand-honoka:   #1490ff;
 $brand-twitter:  #55acee;
 $brand-facebook: #3b5998;
 $brand-hatena:   #178fde;
@@ -79,6 +80,19 @@ $brand-colors: map-merge((
   background: $gray-200;
 }
 
+.bg-primary {
+  .navbar-nav {
+    .active > .nav-link,
+    .nav-link:hover,
+    .nav-link:focus {
+      color: lighten($brand-honoka, 30%) !important;
+    }
+  }
+  .nav-item .nav-link::before {
+    border-color: lighten($brand-honoka, 30%) !important;
+  }
+}
+
 .jumbotron.special {
   position: relative;
   min-height: 530px;
@@ -95,7 +109,7 @@ $brand-colors: map-merge((
     left: 0;
     width: 400px;
     height: 530px;
-    background-image: url("../img/honoka.png");
+    background-image: url("../img/umi.png");
     background-repeat: no-repeat;
   }
   .outline {
