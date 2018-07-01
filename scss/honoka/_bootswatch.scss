@@ -6,8 +6,12 @@
 // Navbar =======================================================================
 
 .bg-primary {
-  .navbar-nav .active > .nav-link {
-    color: $success !important;
+  .navbar-nav {
+    .active > .nav-link,
+    .nav-link:hover,
+    .nav-link:focus {
+      color: $success !important;
+    }
   }
   .nav-item .nav-link::before {
     border-color: $success !important;
