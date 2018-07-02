@@ -1005,7 +1005,7 @@ input[type="button"].btn-block {
   position: absolute;
   bottom: -5rem;
   left: 0;
-  width: 400px;
+  width: 390px;
   height: 530px;
   background-image: url("../img/umi.png");
   background-repeat: no-repeat;
@@ -1031,8 +1031,7 @@ input[type="button"].btn-block {
 
 .jumbotron.special .basedon {
   margin: 0.5rem auto;
-  color: #95a5a6;
-  text-shadow: #fff 0 1px 2px;
+  color: #7b8a8b;
 }
 
 .section {
@@ -1044,7 +1043,7 @@ input[type="button"].btn-block {
 }
 
 .section.section-inverse {
-  background-color: #fafcff;
+  background-color: #e0f0ff;
 }
 
 .section .subtitle {

@@ -107,7 +107,7 @@ $brand-colors: map-merge((
     position: absolute;
     bottom: -1 * ($jumbotron-padding * 2 + $spacer);
     left: 0;
-    width: 400px;
+    width: 390px;
     height: 530px;
     background-image: url("../img/umi.png");
     background-repeat: no-repeat;
@@ -126,8 +126,7 @@ $brand-colors: map-merge((
   }
   .basedon {
     margin: map-get($spacers, 2) auto;
-    color: $gray-600;
-    text-shadow: #fff 0 1px 2px;
+    color: $gray-700;
   }
 }
 
@@ -137,7 +136,7 @@ $brand-colors: map-merge((
     background-color: $body-bg;
   }
   &.section-inverse {
-    background-color: lighten($brand-honoka, 45%);
+    background-color: lighten($brand-honoka, 40%);
   }
   .subtitle {
     margin-bottom: $spacer;
